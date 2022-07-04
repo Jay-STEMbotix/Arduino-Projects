@@ -1,0 +1,24 @@
+// C++ code
+//
+int BRIGHTNESS = 0;
+
+int unnamed = 0;
+
+int i = 0;
+
+void setup()
+{
+  pinMode(A5, OUTPUT);
+}
+
+void loop()
+{
+  for (BRIGHTNESS = 0; BRIGHTNESS <= 255; BRIGHTNESS += 5) {
+    digitalWrite(A5, HIGH);
+    delay(30); // Wait for 30 millisecond(s)
+  }
+  for (BRIGHTNESS = 255; BRIGHTNESS >= 0; BRIGHTNESS -= 5) {
+    digitalWrite(A5, LOW);
+    delay(30); // Wait for 30 millisecond(s)
+  }
+}
