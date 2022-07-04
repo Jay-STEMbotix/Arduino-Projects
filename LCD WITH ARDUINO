@@ -1,0 +1,20 @@
+#include <LiquidCrystal.h>
+
+// LCD pins <--> Arduino pins
+const int RS = 11, EN = 12, D4 = 2, D5 = 3, D6 = 4, D7 = 5;
+LiquidCrystal lcd(RS, EN, D4, D5, D6, D7);
+int TMP = 0;
+
+void setup()
+{
+  pinMode(A3, INPUT);
+  lcd.begin(16, 2);
+}
+
+void loop()
+{
+  TMP = (-40 + 0.488155 * (analogRead(A3) - 20));
+  lcd.setCursor(0, 0);
+ lcd.print("Temperature - ");
+ lcd.print(TMP);
+}
