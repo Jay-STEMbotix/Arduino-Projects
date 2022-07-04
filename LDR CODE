@@ -1,0 +1,23 @@
+// C++ code
+//
+int LDR = 0;
+
+void setup()
+{
+  pinMode(A0, INPUT);
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+  LDR = analogRead(A0);
+  Serial.println(LDR);
+  if (LDR > 500) {
+    digitalWrite(13, HIGH);
+    delay(1000); // Wait for 1000 millisecond(s)
+  } else {
+    digitalWrite(13, LOW);
+    delay(1000); // Wait for 1000 millisecond(s)
+  }
+}
